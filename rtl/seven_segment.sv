@@ -4,7 +4,7 @@
 //   ACTIVE_LOW - 1 for active-low LEDs, 0 for active-high.
 //
 // Ports:
-// digit [3:0] - Hexadecimal digit to display (0x0 to 0xF
+// digit [3:0] - Hexadecimal digit to display (0x0 to 0xF)
 // blank - When high, all segments are turned off.
 // segments [6:0] - Segment outputs [g,f,e,d,c,b,a]
 
@@ -48,7 +48,7 @@ module seven_segment #(
   end
   ;
 
-  assign segments = ACTIVE_LOW != 0 ? ~segments_active_high : segments_active_high;
+  assign segments = ACTIVE_LOW ? !segments_active_high : segments_active_high;
 
 endmodule
 
