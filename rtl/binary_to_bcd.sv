@@ -8,6 +8,8 @@
 // tens [3:0] - Decimal tens digit (BCD)
 // ones [3:0] - Decimal ones digit (BCD)
 
+`timescale 1ns / 1ps
+
 module binary_to_bcd (
     input  logic [6:0] bin, // binary input. 0-99
     output logic [3:0] tens, // decimal tens digic (BCD)
