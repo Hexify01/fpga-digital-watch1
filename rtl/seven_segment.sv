@@ -48,7 +48,7 @@ module seven_segment #(
   end
   ;
 
-  assign segments = ACTIVE_LOW ? !segments_active_high : segments_active_high;
+  assign segments = ACTIVE_LOW != 0 ? ~segments_active_high : segments_active_high;
 
 endmodule
 

@@ -1,4 +1,4 @@
-// Seven-segment display decoder for hexadecimal digits.
+// Up and down counter module
 //
 // Parameters:
 //   MAX - Upper limit for counter before wrapping around.
@@ -18,7 +18,7 @@ module up_down_counter #(
     input logic clk,
     input logic enable,
     input logic up,
-    output logic [WIDTH-1:0] count
+    output logic [WIDTH-1:0] count = WIDTH'(0)
 );
 
     localparam logic [WIDTH-1:0] Max = WIDTH'(MAX);
