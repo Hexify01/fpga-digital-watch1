@@ -30,7 +30,7 @@ module restartable_rate_generator #(
   assign tick = running && tick_qualifier;
 
   generate
-    if (CYCLE_COUNT > 1) begin : g_standard
+    if (CYCLE_COUNT > 1) begin : g_general
       logic rst_count;
       logic enable_count;
       logic [CountWidth-1:0] count;
@@ -50,7 +50,7 @@ module restartable_rate_generator #(
       assign enable_count = run;
       assign tick_qualifier = (count == CountWidth'(CYCLE_COUNT - 1));
 
-    end else begin : g_edge
+    end else begin : g_special
       // Special case for CYCLE_COUNT = 1, tick is generated on every clock edge when run is high
       assign tick_qualifier = 1'b1;
     end
