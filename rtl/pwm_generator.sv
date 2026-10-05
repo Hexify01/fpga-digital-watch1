@@ -24,6 +24,6 @@ module pwm_generator #(
       .count(count)
   );
 
-  assign pwm_out = (count < CounterWidth'(DUTY_CYCLES));
+  assign pwm_out = (int'(count) < DUTY_CYCLES); // To prevent truncation of count
 
 endmodule
